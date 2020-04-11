@@ -93,12 +93,12 @@ int main()
 	if (TEST == 1)
 	{
 		db_mk_headings(&headings, SIZE_X);
-		while (i < headings->headings_count)
+		while (i < headings->az_hdg_count)
 		{
-			printf("hdg :%d mask :%d value:%f\n", i, headings->heading[i]->test, headings->heading[i]->offs_mult);
+			printf("hdg :%d mask :%d value:%f\n", i, headings->az_hdg[i]->test, headings->az_hdg[i]->offs_mult);
 			i++;
 		}
-		printf("headings_count : %d\n", headings->headings_count);
+		printf("headings_count : %d\n", headings->az_hdg_count);
 	}
 
 

@@ -10,11 +10,13 @@ int db_mk_headings(db_headings **headings, int size_x)
 
 	if (!(*headings = malloc(sizeof(db_headings))) || 
 	!((*headings)->heading = malloc(sizeof(db_mask *) * (size_x * 4))) || 
-	!((*headings)->mask = malloc(sizeof(db_mask) * ((size_x / 2) + (size_x % 2)))))
+	!((*headings)->mask = malloc(sizeof(db_mask) * ((size_x / 2) + (size_x % 2)))) ||
+	!((*headings)->attitude = malloc(sizeof(double) * (size_y * 6))))
 		return 0;
 
 	(*headings)->masks_count = (size_x / 2) + (size_x % 2);
 	(*headings)->headings_count = size_x * 4;
+	(*headings)->attitudes_count = size_y * 6;
 
 	if (size_x % 2 == 1)
 	{
@@ -50,5 +52,10 @@ int db_mk_headings(db_headings **headings, int size_x)
 	{
 		(*headings)->mask[i].offs_mult = (double)i / (*headings)->masks_count;
 		i++;
+	}
+	i = 0;
+	while (i < (*headings)->attitudes_count)
+	{
+		(*headings)->
 	}
 }

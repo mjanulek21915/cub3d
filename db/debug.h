@@ -5,19 +5,12 @@
 
 #include "main.h"
 
-typedef struct	s_planes
-{
-	int count;
-	db_plane *list;
-}				db_planes;
-
 typedef struct	s_plane
 {
+	int reg;
 	double interval;
-	double origin;
-	void *img;
-}				db_plane;
-
+	
+}
 
 typedef struct	s_mask
 {
@@ -30,8 +23,10 @@ typedef struct	s_headings
 {
 	int masks_count;
 	int headings_count;
+	int attitudes_count;
 	db_mask **heading;
 	db_mask *mask;
+	double *attitude;
 }				db_headings;
 
 
