@@ -1,3 +1,6 @@
-// #include "debug.h"
+#include "debug.h"
 
-// int db_mk_map( )
+int db_mk_map()
+{
+    return 0;
+}

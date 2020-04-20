@@ -5,29 +5,18 @@
 
 #include "main.h"
 
-typedef struct	s_plane
+typedef struct	s_cell
 {
-	int reg;
-	double interval;
-	
-}
+	int is_plane;
+	db_plane *plane;
+}				db_cell;
 
-typedef struct	s_mask
+typedef struct	s_map
 {
-	int test;
-	double dist_mult;
-	double offs_mult;
-}				db_mask;
+	db_cell **x_cell;
+	db_cell **y_cell;
 
-typedef struct	s_headings
-{
-	int masks_count;
-	int headings_count;
-	int attitudes_count;
-	db_mask **heading;
-	db_mask *mask;
-	double *attitude;
-}				db_headings;
+}				db_map;
 
 
 typedef struct  s_redraw
@@ -36,13 +25,6 @@ typedef struct  s_redraw
     void *win;
     t_sprite *sprite;
 }				db_request;
-
-typedef struct	s_cell
-{
-	int is_plane;
-	db_plane *plane;
-}				db_cell;
-
 
 
 int db_mk_sprite(void *mlx, t_sprite **sprite, int size_x, int size_y, int pos_x, int pos_y, PIXEL color);
